@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Form extends Component {
-  // constructor() {
-  //   super();
+  constructor() {
+    super();
 
-  //   this.onInputChange = this.onInputChange.bind(this);
+    this.onInputChange = this.onInputChange.bind(this);
 
-  //   this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
-  // }
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+  }
 
   render() {
     const {
@@ -140,6 +141,8 @@ Form.propTypes = {
   cardTrunfo: PropTypes.bool.isRequired,
   hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
+  onInputChange: PropTypes.func.isRequired,
+  onSaveButtonClick: PropTypes.func.isRequired,
 };
 
 export default Form;
