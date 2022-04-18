@@ -9,7 +9,7 @@ class App extends React.Component {
 
     this.onInputChange = this.onInputChange.bind(this);
 
-    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    // this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
 
     this.state = {
       cardName: '',
@@ -34,15 +34,11 @@ class App extends React.Component {
     });
   }
 
-  onSaveButtonClick() {
-    console.log('func');
-  }
-
   render() {
     const { cardName, cardAttr1, cardAttr2,
       cardAttr3, cardImage, cardRare, cardTrunfo } = this.state;
     return (
-      <div>
+      <div className="main">
         <Form onInputChange={ this.onInputChange } />
         <Card
           cardName={ cardName }
@@ -59,3 +55,7 @@ class App extends React.Component {
 }
 
 export default App;
+
+// onSaveButtonClick() {
+//   console.log('func');
+// }

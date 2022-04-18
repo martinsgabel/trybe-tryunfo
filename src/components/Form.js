@@ -28,7 +28,7 @@ class Form extends Component {
         <FormInput
           htmlFor="nomeCarta"
           label="Nome"
-          data-testid="name-input"
+          dataTestid="name-input"
           id="nomeCarta"
           name="nomeCarta"
           type="text"
@@ -38,7 +38,7 @@ class Form extends Component {
         <FormTextArea
           htmlFor="descriCarta"
           label="Descrição"
-          data-testid="description-input"
+          dataTestid="description-input"
           id="descriCarta"
           name="descriCarta"
           value={ cardDescription }
@@ -47,7 +47,7 @@ class Form extends Component {
         <FormInput
           htmlFor="atrib1"
           label="Atributo 1"
-          data-testid="attr1-input"
+          dataTestid="attr1-input"
           id="atrib1"
           name="atrib1"
           type="text"
@@ -57,7 +57,7 @@ class Form extends Component {
         <FormInput
           htmlFor="atrib2"
           label="Atributo 2"
-          data-testid="attr2-input"
+          dataTestid="attr2-input"
           id="atrib2"
           name="atrib2"
           type="text"
@@ -67,7 +67,7 @@ class Form extends Component {
         <FormInput
           htmlFor="atrib3"
           label="Atributo 3"
-          data-testid="attr3-input"
+          dataTestid="attr3-input"
           id="atrib3"
           name="atrib3"
           type="text"
@@ -77,7 +77,7 @@ class Form extends Component {
         <FormInput
           htmlFor="imgCarta"
           label="Imagem"
-          data-testid="image-input"
+          dataTestid="image-input"
           id="imgCarta"
           name="imgCarta"
           type="text"
@@ -87,7 +87,7 @@ class Form extends Component {
         <FormSelect
           htmlFor="raridade"
           label="Raridade"
-          data-testid="rare-input"
+          dataTestid="rare-input"
           id="raridade"
           name="raridade"
           value={ cardRare }
@@ -96,7 +96,7 @@ class Form extends Component {
         <FormCheckbox
           htmlFor="checkbox"
           label="Super Trybe Trunfo"
-          data-testid="trunfo-input"
+          dataTestid="trunfo-input"
           id="checkbox"
           name="checkbox"
           type="checkbox"
