@@ -6,10 +6,9 @@ import Card from './components/Card';
 class App extends React.Component {
   constructor() {
     super();
-
     this.onInputChange = this.onInputChange.bind(this);
-
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    this.isSaveButtonDisabled = this.isSaveButtonDisabled.bind(this);
 
     this.state = {
       cardName: '',
@@ -20,13 +19,17 @@ class App extends React.Component {
       cardImage: '',
       cardRare: '',
       cardTrunfo: false,
+      isSaveButtonDisabled: true,
     };
   }
 
   onInputChange({ target }) {
     console.log(`${target} ${target.value}`);
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
     this.setState({
-      [target.name]: target.value,
+      [name]: value,
     });
   }
 
@@ -35,15 +38,16 @@ class App extends React.Component {
   }
 
   isSaveButtonDisabled() {
-    console.log('oibut');
+    console.log(cardAttr1.value);
   }
 
   render() {
-    const { cardName, cardDescription, cardAttr1, cardAttr2,
+    const { cardName, cardDescription, cardAttr1, cardAttr2, isSaveButtonDisabled,
       cardAttr3, cardImage, cardRare, cardTrunfo } = this.state;
     return (
       <div className="main">
         <Form
+          isSaveButtonDisabled={ isSaveButtonDisabled }
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
         />
