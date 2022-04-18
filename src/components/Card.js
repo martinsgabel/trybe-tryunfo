@@ -33,7 +33,7 @@ class Card extends Component {
           </ul>
         </div>
         <div>
-          {cardTrunfo && <p data-testid="trunfo-card">{ cardTrunfo }</p>}
+          {cardTrunfo && <p data-testid="trunfo-card">Super Trunfo</p>}
         </div>
       </div>
     );

@@ -33,7 +33,7 @@ class Form extends Component {
           id="cardName"
           name="cardName"
           type="text"
-          value={ cardName }// this.state.cardName prob
+          value={ cardName }
           onInputChange={ onInputChange }
         />
         <FormTextArea

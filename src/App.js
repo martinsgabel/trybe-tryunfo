@@ -8,7 +8,7 @@ class App extends React.Component {
     super();
     this.onInputChange = this.onInputChange.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
-    this.isSaveButtonDisabled = this.isSaveButtonDisabled.bind(this);
+    this.disablingButton = this.disablingButton.bind(this);
 
     this.state = {
       cardName: '',
@@ -30,6 +30,8 @@ class App extends React.Component {
 
     this.setState({
       [name]: value,
+    }, () => {
+      this.disablingButton();
     });
   }
 
@@ -37,8 +39,14 @@ class App extends React.Component {
     console.log('func');
   }
 
-  isSaveButtonDisabled() {
-    console.log(cardAttr1.value);
+  disablingButton() {
+    console.log('kero');
+    const { cardName } = this.state;
+    if (cardName.length > 1) {
+      this.setState({
+        isSaveButtonDisabled: false,
+      });
+    }
   }
 
   render() {
