@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Card extends Component {
-  // constructor() {
-  //   super();
-  // }
-
   render() {
     const {
       cardName,

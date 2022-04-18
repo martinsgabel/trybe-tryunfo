@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FormInput from './FormInput';
+import FormInputNumber from './FormInputNumber';
 import FormCheckbox from './FormCheckbox';
 import FormTextArea from './FormTextArea';
 import FormSelect from './FormSelect';
@@ -26,79 +27,79 @@ class Form extends Component {
     return (
       <form>
         <FormInput
-          htmlFor="nomeCarta"
+          htmlFor="cardName"
           label="Nome"
           dataTestid="name-input"
-          id="nomeCarta"
-          name="nomeCarta"
+          id="cardName"
+          name="cardName"
           type="text"
           value={ cardName }// this.state.cardName prob
           onInputChange={ onInputChange }
         />
         <FormTextArea
-          htmlFor="descriCarta"
+          htmlFor="cardDescription"
           label="Descrição"
           dataTestid="description-input"
-          id="descriCarta"
-          name="descriCarta"
+          id="cardDescription"
+          name="cardDescription"
           value={ cardDescription }
           onInputChange={ onInputChange }
         />
-        <FormInput
-          htmlFor="atrib1"
+        <FormInputNumber
+          htmlFor="cardAttr1"
           label="Atributo 1"
           dataTestid="attr1-input"
-          id="atrib1"
-          name="atrib1"
-          type="text"
+          id="cardAttr1"
+          name="cardAttr1"
+          type="number"
           value={ cardAttr1 }
           onInputChange={ onInputChange }
         />
-        <FormInput
-          htmlFor="atrib2"
+        <FormInputNumber
+          htmlFor="cardAttr2"
           label="Atributo 2"
           dataTestid="attr2-input"
-          id="atrib2"
-          name="atrib2"
-          type="text"
+          id="cardAttr2"
+          name="cardAttr2"
+          type="number"
           value={ cardAttr2 }
           onInputChange={ onInputChange }
         />
-        <FormInput
-          htmlFor="atrib3"
+        <FormInputNumber
+          htmlFor="cardAttr3"
           label="Atributo 3"
           dataTestid="attr3-input"
-          id="atrib3"
-          name="atrib3"
-          type="text"
+          id="cardAttr3"
+          name="cardAttr3"
+          type="number"
           value={ cardAttr3 }
           onInputChange={ onInputChange }
         />
         <FormInput
-          htmlFor="imgCarta"
+          htmlFor="cardImage"
           label="Imagem"
           dataTestid="image-input"
-          id="imgCarta"
-          name="imgCarta"
+          id="cardImage"
+          name="cardImage"
           type="text"
           value={ cardImage }
           onInputChange={ onInputChange }
         />
         <FormSelect
-          htmlFor="raridade"
+          htmlFor="cardRare"
           label="Raridade"
           dataTestid="rare-input"
-          id="raridade"
-          name="raridade"
+          id="cardRare"
+          name="cardRare"
           value={ cardRare }
           onInputChange={ onInputChange }
         />
         <FormCheckbox
-          htmlFor="checkbox"
+          htmlFor="cardTrunfo"
           label="Super Trybe Trunfo"
           dataTestid="trunfo-input"
-          id="checkbox"
-          name="checkbox"
+          id="cardTrunfo"
+          name="cardTrunfo"
           type="checkbox"
           checked={ cardTrunfo }
           onInputChange={ onInputChange }
@@ -116,9 +117,9 @@ class Form extends Component {
 Form.propTypes = {
   cardName: PropTypes.string.isRequired,
   cardDescription: PropTypes.string.isRequired,
-  cardAttr1: PropTypes.string.isRequired,
-  cardAttr2: PropTypes.string.isRequired,
-  cardAttr3: PropTypes.string.isRequired,
+  cardAttr1: PropTypes.number.isRequired,
+  cardAttr2: PropTypes.number.isRequired,
+  cardAttr3: PropTypes.number.isRequired,
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
