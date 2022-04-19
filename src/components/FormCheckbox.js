@@ -17,6 +17,7 @@ class FormCheckbox extends Component {
           onChange={ onInputChange }
         />
       </label>
+
     );
   }
 }
