@@ -95,7 +95,7 @@ class App extends React.Component {
 
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, isSaveButtonDisabled,
-      cardAttr3, cardImage, cardRare, cardTrunfo, hasTrunfo } = this.state;
+      cardAttr3, cardImage, cardRare, cardTrunfo, hasTrunfo, savedCards } = this.state;
     return (
       <div className="main">
         <Form
@@ -122,6 +122,21 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        <div>
+          {savedCards.map((card, ind) => (
+            <Card
+              key={ ind }
+              cardName={ card.cardName }
+              cardDescription={ card.cardDescription }
+              cardAttr1={ card.cardAttr1 }
+              cardAttr2={ card.cardAttr2 }
+              cardAttr3={ card.cardAttr3 }
+              cardImage={ card.cardImage }
+              cardRare={ card.cardRare }
+              cardTrunfo={ card.cardTrunfo }
+            />
+          ))}
+        </div>
       </div>
     );
   }
