@@ -24,7 +24,6 @@ class App extends React.Component {
       hasTrunfo: false,
       isSaveButtonDisabled: true,
       savedCards: [],
-      // delCards: [],
     };
   }
 
@@ -63,12 +62,12 @@ class App extends React.Component {
         cardImage: '',
         cardRare: 'normal',
       }),
-      // () => {
-      //   const { savedCards } = this.state;
-      //   this.setState({
-      //     savedCards: savedCards.some((card) => card.cardTrunfo),
-      //   });
-      // }
+      () => {
+        const { savedCards } = this.state;
+        this.setState({
+          hasTrunfo: savedCards.some((card) => card.cardTrunfo),
+        });
+      },
     );
   }
 
