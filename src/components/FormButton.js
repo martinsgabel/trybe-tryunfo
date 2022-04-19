@@ -7,7 +7,7 @@ class FormButton extends Component {
     return (
       <button
         data-testid={ dataTestid }
-        type="submit"
+        type="button"
         disabled={ disabled }
         onClick={ onSaveButtonClick }
       >

@@ -13,13 +13,14 @@ class App extends React.Component {
     this.state = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: 0,
-      cardAttr2: 0,
-      cardAttr3: 0,
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardImage: '',
-      cardRare: '',
+      cardRare: 'normal',
       cardTrunfo: false,
       isSaveButtonDisabled: true,
+      savedCards: [],
     };
   }
 
@@ -34,36 +35,31 @@ class App extends React.Component {
   }
 
   onSaveButtonClick() {
-    console.log('func');
+    const { cardName, cardDescription, cardAttr1, cardAttr2,
+      cardAttr3, cardImage, cardRare, cardTrunfo } = this.state;
+    const obj = {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+    };
+    this.setState(
+      (prevState) => ({
+        savedCards: [...prevState.savedCards, obj],
+        cardName: '',
+        cardDescription: '',
+        cardAttr1: '0',
+        cardAttr2: '0',
+        cardAttr3: '0',
+        cardImage: '',
+        cardRare: 'normal',
+      }),
+    );
   }
-
-  // validatingInputs() {
-  //   const { cardName, cardDescription, cardImage, cardRare } = this.state;
-  //   const validations = [(!cardName.length), (!cardDescription.length),
-  //     (!cardImage.length), (!cardRare.length)];
-  //   if (validations.some((val) => val === true)) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
-  // validatingAtts() {
-  //   const { cardAttr1, cardAttr2, cardAttr3 } = this.state;
-  //   const maxNum = 90;
-  //   if ((cardAttr1 < 0 || cardAttr1 > maxNum)
-  //   || (cardAttr2 < 0 || cardAttr2 > maxNum)
-  //   || (cardAttr3 < 0 || cardAttr3 > maxNum)) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
-  // validatingMaxSum() {
-  //   const { cardAttr1, cardAttr2, cardAttr3 } = this.state;
-  //   const maxSum = 210;
-  //   if ((cardAttr1 + cardAttr2 + cardAttr3) > maxSum) return true;
-  //   return false;
-  // }
 
   disablingButton() {
     const { cardName, cardDescription, cardAttr1, cardAttr2,
