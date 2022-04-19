@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Form from './components/Form';
 import Card from './components/Card';
+import CardSaved from './components/CardSaved';
 
 class App extends React.Component {
   constructor() {
@@ -9,6 +10,7 @@ class App extends React.Component {
     this.onInputChange = this.onInputChange.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
     this.disablingButton = this.disablingButton.bind(this);
+    this.deleteCard = this.deleteCard.bind(this);
 
     this.state = {
       cardName: '',
@@ -22,6 +24,7 @@ class App extends React.Component {
       hasTrunfo: false,
       isSaveButtonDisabled: true,
       savedCards: [],
+      // delCards: [],
     };
   }
 
@@ -37,7 +40,7 @@ class App extends React.Component {
 
   onSaveButtonClick() {
     const { cardName, cardDescription, cardAttr1, cardAttr2,
-      cardAttr3, cardImage, cardRare, cardTrunfo, savedCards } = this.state;
+      cardAttr3, cardImage, cardRare, cardTrunfo } = this.state;
     const obj = {
       cardName,
       cardDescription,
@@ -48,10 +51,6 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
     };
-
-    this.setState(() => ({
-      hasTrunfo: savedCards.some((card) => card.cardTrunfo),
-    }));
 
     this.setState(
       (prevState) => ({
@@ -64,6 +63,12 @@ class App extends React.Component {
         cardImage: '',
         cardRare: 'normal',
       }),
+      // () => {
+      //   const { savedCards } = this.state;
+      //   this.setState({
+      //     savedCards: savedCards.some((card) => card.cardTrunfo),
+      //   });
+      // }
     );
   }
 
@@ -91,6 +96,14 @@ class App extends React.Component {
         isSaveButtonDisabled: false,
       });
     }
+  }
+
+  deleteCard(card) {
+    console.log(card);
+    const { savedCards } = this.state;
+    this.setState({
+      savedCards: savedCards.filter((carditem) => carditem.cardName !== card.cardName),
+    });
   }
 
   render() {
@@ -124,17 +137,20 @@ class App extends React.Component {
         />
         <div>
           {savedCards.map((card, ind) => (
-            <Card
-              key={ ind }
-              cardName={ card.cardName }
-              cardDescription={ card.cardDescription }
-              cardAttr1={ card.cardAttr1 }
-              cardAttr2={ card.cardAttr2 }
-              cardAttr3={ card.cardAttr3 }
-              cardImage={ card.cardImage }
-              cardRare={ card.cardRare }
-              cardTrunfo={ card.cardTrunfo }
-            />
+            <div key={ ind }>
+              <CardSaved
+                key={ ind }
+                cardName={ card.cardName }
+                cardDescription={ card.cardDescription }
+                cardAttr1={ card.cardAttr1 }
+                cardAttr2={ card.cardAttr2 }
+                cardAttr3={ card.cardAttr3 }
+                cardImage={ card.cardImage }
+                cardRare={ card.cardRare }
+                cardTrunfo={ card.cardTrunfo }
+                deleteCard={ () => this.deleteCard(card) }
+              />
+            </div>
           ))}
         </div>
       </div>
