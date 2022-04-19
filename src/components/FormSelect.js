@@ -14,7 +14,7 @@ class FormSelect extends Component {
           value={ value }
           onChange={ onInputChange }
         >
-          <option value="normal">normal</option>
+          <option value="normal" selected>normal</option>
           <option value="raro">raro</option>
           <option value="muito raro">muito raro</option>
         </select>
