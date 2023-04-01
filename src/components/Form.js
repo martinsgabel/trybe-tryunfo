@@ -94,22 +94,6 @@ class Form extends Component {
           value={ cardRare }
           onInputChange={ onInputChange }
         />
-        {/* <div>
-          {console.log(hasTrunfo)}
-          {hasTrunfo && <p>Você já tem um Super Trunfo em seu baralho</p>}
-          {!hasTrunfo && (
-            <FormCheckbox
-              htmlFor="cardTrunfo"
-              label="Super Trybe Trunfo"
-              dataTestid="trunfo-input"
-              id="cardTrunfo"
-              name="cardTrunfo"
-              type="checkbox"
-              checked={ cardTrunfo }
-              onInputChange={ onInputChange }
-            />
-          )}
-        </div> */}
         <div>
           {!hasTrunfo ? (
             <FormCheckbox
@@ -124,17 +108,6 @@ class Form extends Component {
             />
           ) : <p>Você já tem um Super Trunfo em seu baralho</p>}
         </div>
-        {/* </div>
-        <FormCheckbox
-          htmlFor="cardTrunfo"
-          label="Super Trybe Trunfo"
-          dataTestid="trunfo-input"
-          id="cardTrunfo"
-          name="cardTrunfo"
-          type="checkbox"
-          checked={ cardTrunfo }
-          onInputChange={ onInputChange }
-        /> */}
         <FormButton
           dataTestid="save-button"
           disabled={ isSaveButtonDisabled }
